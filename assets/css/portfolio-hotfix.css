@@ -1,0 +1,180 @@
+/* Correções visuais e funcionais dos cards — 22/07/2026 */
+
+/* O estado oculto precisa vencer o display:grid dos cards largos. */
+.project[hidden],
+.project.hidden {
+  display: none !important;
+}
+
+.filter {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.filter:focus-visible {
+  outline: 3px solid rgba(15, 252, 190, .45);
+  outline-offset: 3px;
+}
+
+.project.text-only {
+  min-height: 300px;
+}
+
+.project.text-only .tags {
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+/* As ilustrações de SSO e pesquisa foram removidas pelo script. */
+.sso-visual,
+.semantic-visual {
+  display: none !important;
+}
+
+/* Subcase BEE1 usando a cor de acento da marca. */
+.campaign-case {
+  background: rgba(248, 181, 0, .075);
+  border-color: rgba(248, 181, 0, .24);
+  border-left-color: #f8b500;
+}
+
+.campaign-case small {
+  color: #f8b500;
+}
+
+/*
+ * BEE1
+ * Paleta do site: carvão/cinza escuro, branco e amarelo.
+ */
+.bee-visual {
+  min-height: 338px;
+  background: linear-gradient(145deg, #1f1f1f, #393e46);
+}
+
+.bee-showcase {
+  color: #e6e6e6;
+  background: #292929;
+  border-color: rgba(248, 181, 0, .28);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, .35);
+}
+
+.bee-showcase::before {
+  background: linear-gradient(90deg, #f8b500, #af7900, #f8b500);
+}
+
+.bee-nav b {
+  color: #f8b500;
+  letter-spacing: .12em;
+}
+
+.bee-nav span,
+.bee-nav i {
+  background: #444a52;
+}
+
+.bee-nav i:last-child {
+  background: #f8b500;
+}
+
+.bee-hero {
+  color: #202020;
+  background: linear-gradient(145deg, #f8b500, #e9a900);
+}
+
+.bee-hero small {
+  color: #493400;
+}
+
+.bee-hero strong {
+  color: #202020;
+}
+
+.bee-hero p {
+  color: rgba(32, 32, 32, .75);
+}
+
+.bee-modules span {
+  color: #f8b500;
+  background: #393e46;
+  border: 1px solid rgba(248, 181, 0, .22);
+}
+
+.bee-flow span {
+  color: #292929;
+  background: #f8b500;
+}
+
+.bee-flow i {
+  background: linear-gradient(90deg, #af7900, #f8b500);
+}
+
+/*
+ * Barraca do Pezão
+ * Paleta do projeto: azul #22397d, azul escuro #162654,
+ * laranja #ffb238/#f49a17, aqua #34c6d3 e areia #fff8ec.
+ */
+.pezao-visual {
+  min-height: 338px;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(52, 198, 211, .42), transparent 25%),
+    radial-gradient(circle at 12% 88%, rgba(255, 178, 56, .32), transparent 30%),
+    linear-gradient(145deg, #fffdf8, #fff8ec);
+}
+
+.coast-sun {
+  background: #ffb238;
+  box-shadow: 0 0 0 15px rgba(255, 178, 56, .16);
+}
+
+.pezao-desktop {
+  color: #22397d;
+  background: rgba(255, 253, 248, .96);
+  border: 1px solid rgba(34, 57, 125, .12);
+  box-shadow: 0 24px 60px rgba(22, 38, 84, .18);
+}
+
+.pezao-desktop small {
+  color: #f49a17;
+}
+
+.seat-map span {
+  background: #fff8ec;
+  border-color: rgba(34, 57, 125, .13);
+}
+
+.seat-map span:nth-child(3),
+.seat-map span:nth-child(7) {
+  background: rgba(52, 198, 211, .18);
+  border-color: rgba(52, 198, 211, .55);
+}
+
+.seat-map .active {
+  background: linear-gradient(135deg, #ffb238, #f49a17);
+  border-color: #f49a17;
+  box-shadow: 0 8px 18px rgba(244, 154, 23, .26);
+}
+
+.pezao-phone {
+  background: linear-gradient(155deg, #162654, #22397d);
+  border-color: rgba(255, 255, 255, .18);
+  box-shadow: 0 22px 46px rgba(22, 38, 84, .3);
+}
+
+.pezao-phone p {
+  color: rgba(255, 255, 255, .72);
+}
+
+.menu-lines span {
+  background: rgba(52, 198, 211, .3);
+}
+
+.pezao-phone b {
+  color: #fff;
+  background: linear-gradient(135deg, #ffb238, #f49a17);
+}
+
+@media (max-width: 680px) {
+  .project.text-only {
+    min-height: auto;
+  }
+}

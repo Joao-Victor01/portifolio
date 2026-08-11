@@ -173,8 +173,67 @@
   background: linear-gradient(135deg, #ffb238, #f49a17);
 }
 
+/*
+ * Teste de retrato no hero.
+ * A foto entra no fluxo do card técnico para preservar o caráter profissional
+ * e pode ser removida integralmente via rollback.
+ */
+.profile {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+
+.profile::before {
+  content: "";
+  order: 1;
+  display: block;
+  width: 100%;
+  height: 270px;
+  margin: 0 0 18px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(0, 171, 228, .24), transparent 31%),
+    radial-gradient(circle at 10% 92%, rgba(15, 252, 190, .18), transparent 34%),
+    url("../img/joao-victor-profile.webp") center 22% / cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 26px;
+  box-shadow:
+    inset 0 0 0 1px rgba(15, 252, 190, .06),
+    0 24px 55px rgba(0, 0, 0, .24);
+}
+
+.profile .topbar {
+  order: 0;
+}
+
+.profile .terminal {
+  order: 2;
+}
+
+.profile .stack {
+  order: 3;
+}
+
+.profile::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 48px;
+  right: 10px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(15, 252, 190, .16), transparent 68%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
 @media (max-width: 680px) {
   .project.text-only {
     min-height: auto;
+  }
+
+  .profile::before {
+    height: 235px;
+    border-radius: 20px;
   }
 }
